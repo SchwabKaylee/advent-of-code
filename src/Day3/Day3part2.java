@@ -21,13 +21,14 @@ public class Day3part2 {
         visited[text.length()][text.length()] = true;
         int total=1, x=text.length(), y=text.length(), x2=text.length(), y2=text.length(), i;
         for (i=0;i<text.length();i++){
-            if (text.charAt(i)=='^'){
+            char ch = text.charAt(i);
+            if (ch=='^'){
                 x++;
-            } else if (text.charAt(i)=='v'){
+            } else if (ch=='v'){
                 x--;
-            } else if (text.charAt(i)=='>'){
+            } else if (ch=='>'){
                 y++;
-            } else if (text.charAt(i)=='<'){
+            } else if (ch=='<'){
                 y--;
             }
             if (visited[x][y]==false){
@@ -35,13 +36,14 @@ public class Day3part2 {
                 visited[x][y]=true;
             }
             i++;
-            if (text.charAt(i)=='^'){
+            ch = text.charAt(i);
+            if (ch=='^'){
                 x2++;
-            } else if (text.charAt(i)=='v'){
+            } else if (ch=='v'){
                 x2--;
-            } else if (text.charAt(i)=='>'){
+            } else if (ch=='>'){
                 y2++;
-            } else if (text.charAt(i)=='<'){
+            } else if (ch=='<'){
                 y2--;
             }
             if (visited[x2][y2]==false){

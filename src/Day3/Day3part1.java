@@ -22,13 +22,14 @@ public class Day3part1 {
         visited[text.length()][text.length()] = true;
         int total=1, x=text.length(), y=text.length(), i;
         for (i=0;i<text.length();i++){
-            if (text.charAt(i)=='^'){
+            char ch = text.charAt(i);
+            if (ch=='^'){
                 x++;
-            } else if (text.charAt(i)=='v'){
+            } else if (ch=='v'){
                 x--;
-            } else if (text.charAt(i)=='>'){
+            } else if (ch=='>'){
                 y++;
-            } else if (text.charAt(i)=='<'){
+            } else if (ch=='<'){
                 y--;
             }
             if (visited[x][y]==false){

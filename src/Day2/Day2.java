@@ -11,7 +11,7 @@ import java.util.*;
  */
 public class Day2 {
     public static void main(String args[]){
-        int i, j, h, l, w, min, area = 0, ribbon = 0;
+        int i, j, height, length, width, min, area = 0, ribbon = 0;
 
         File file = new File("src/Day2/Day2.txt");
         ArrayList<String> lines = new ArrayList<>();
@@ -27,14 +27,14 @@ public class Day2 {
 
         for (i=0;i<lines.size();i++){
             String[] str = lines.get(i).split("x");
-            l = Integer.parseInt(str[0]);
-            w = Integer.parseInt(str[1]);
-            h = Integer.parseInt(str[2]);
+            length = Integer.parseInt(str[0]);
+            width = Integer.parseInt(str[1]);
+            height = Integer.parseInt(str[2]);
 
             int[] faces = new int[3];
-            faces[0] = l*w;
-            faces[1] = w*h;
-            faces[2] = h*l;
+            faces[0] = length*width;
+            faces[1] = width*height;
+            faces[2] = height*length;
             min = faces[0];
 
             for(j=0;j<3;j++) {
@@ -44,12 +44,12 @@ public class Day2 {
             area += min;
 
             if (min==faces[0])
-                ribbon += 2*(l+w);
+                ribbon += 2*(length+width);
             else if (min==faces[1])
-                ribbon += 2*(w+h);
+                ribbon += 2*(width+height);
             else if (min==faces[2])
-                ribbon += 2*(h+l);
-            ribbon += l*w*h;
+                ribbon += 2*(height+length);
+            ribbon += length*width*height;
         }
         System.out.println(area);
         System.out.println(ribbon);

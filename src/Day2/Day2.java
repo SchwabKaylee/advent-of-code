@@ -1,4 +1,7 @@
+package Day2;
+
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
@@ -10,9 +13,10 @@ public class Day2 {
     public static void main(String args[]){
         int i, j, h, l, w, min, area = 0, ribbon = 0;
 
+        File file = new File("src/Day2/Day2.txt");
         ArrayList<String> lines = new ArrayList<>();
 
-        try (BufferedReader br = new BufferedReader(new FileReader("Day2.txt"))){
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
             String line;
             while ((line = br.readLine()) != null){
                 lines.add(line);

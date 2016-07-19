@@ -1,3 +1,5 @@
+package Day1;
+
 import java.io.*;
 import java.lang.*;
 import java.util.*;
@@ -9,9 +11,16 @@ public class Day1 {
     public static void main(String args[]){
         int i, floor = 0, c = 0;
         boolean basement = false;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("\nEnter text:\t");
-        String text = scanner.nextLine();
+        //Scanner scanner = new Scanner(System.in);
+        //System.out.print("\nEnter text:\t");
+        //String text = scanner.nextLine();
+        String text = new String();
+        File file = new File("src/Day1/Day1.txt");
+        try (BufferedReader br = new BufferedReader(new FileReader(file))){
+            text = br.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         for (i = 0; i < text.length(); i++) {
             if (text.charAt(i) == '(') {
